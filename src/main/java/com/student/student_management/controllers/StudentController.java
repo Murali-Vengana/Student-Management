@@ -7,16 +7,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.student.student_management.pojo.Student;
+import com.student.student_management.service.StudentService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
+
 public class StudentController {
 	
+	private final StudentService studentService;
+	
     
+	public StudentController(StudentService studentService) {
+		super();
+		this.studentService = studentService;
+	}
+
+
 	@PostMapping("/student/saveStudent")
 	public String saveStudent(@RequestBody Student student) {
 		System.out.println("api called");
 		System.out.println(student.getStudentName());
+		studentService.saveStudent(student);
 		return "";
 	}
 	}
