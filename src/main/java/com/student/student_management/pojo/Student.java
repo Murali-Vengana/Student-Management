@@ -40,6 +40,14 @@ public class Student {
 
 	private List<String> hobbies;
 
+	public Student() {
+
+		super();
+
+		// TODO Auto-generated constructor stub
+
+	}
+ 
  
 	public Student(String studentName, String email, String sex, Date dob, List<String> hobbies) {
 
