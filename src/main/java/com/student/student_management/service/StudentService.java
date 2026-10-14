@@ -24,6 +24,14 @@ public class StudentService {
 		// TODO Auto-generated method stub
 		return studentRepository.findAll();
 		
-				}
+	}
+    
+	public Student updateStudent(Student student) {
 
+    	System.out.println("update student "+ student);
+
+        return studentRepository.save(student);
+
+    }
+ 
 }
